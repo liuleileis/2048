@@ -3,6 +3,6 @@
     <color name="colorPrimary">#88e26d</color>
     <color name="colorPrimaryDark">#629342</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="gameview_background">#c9c4c3</color>
-    <color name="Card_color">#33ea6bf1</color>
+    <color name="gameview_background">#c8c8a9</color>
+    <color name="Card_color">#f9cdad</color>
 </resources>
