@@ -27,7 +27,7 @@ public class Welcome extends AppCompatActivity {
         imageview.setBackground(welcome_image);
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                Intent mainIntent = new Intent(Welcome.this, MainActivity.class);
+                Intent mainIntent = new Intent(Welcome.this, GamePattern.class);
                 Welcome.this.startActivity(mainIntent);
                 Welcome.this.finish();
             }

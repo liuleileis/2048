@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.GridLayout;
@@ -85,6 +86,7 @@ public class GameView extends GridLayout {
         super.onSizeChanged(w, h, oldw, oldh);
         int cardWidth = (Math.min(w,h) - 10) / 4;
         addCard(cardWidth,cardWidth);
+        Log.d("test","adsa");
         startGame();
     }
 

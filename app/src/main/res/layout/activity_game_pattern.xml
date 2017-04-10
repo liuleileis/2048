@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="example.com.game2048.GamePattern">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/GamePattern_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textSize="64dp"
+            android:gravity="center"
+            android:background="@color/gameview_background"
+            android:textColor="@color/colorAccent"
+            android:letterSpacing="0.5"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark">
+        <Button
+            android:id="@+id/gamepattern_survival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:text="生存模式"
+            android:textColor="@color/color_game_pattern_font"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/gamepattern_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:text="计时模式"
+            android:textColor="@color/color_game_pattern_font"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="gameview_background">#c8c8a9</color>
     <color name="Card_color">#f9cdad</color>
+    <color name="button_color1">#e79429</color>
+    <color name="button_color2">#f6aa3e</color>
+    <color name="color_game_pattern_font">#116622</color>
 </resources>
