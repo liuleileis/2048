@@ -7,7 +7,6 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.GridLayout;
@@ -86,7 +85,6 @@ public class GameView extends GridLayout {
         super.onSizeChanged(w, h, oldw, oldh);
         int cardWidth = (Math.min(w,h) - 10) / 4;
         addCard(cardWidth,cardWidth);
-        Log.d("test","adsa");
         startGame();
     }
 
@@ -115,10 +113,9 @@ public class GameView extends GridLayout {
             }
         }
     }
-
     //保存空位置对应的点
     private List<Point> emptypoints = new ArrayList<Point>();
-
+    //任意位置添加数字
     private void addRandomNum(){
         emptypoints.clear();
         for(int i = 0; i < 4; i++){
@@ -131,7 +128,7 @@ public class GameView extends GridLayout {
         Point p = emptypoints.remove((int)(Math.random()*emptypoints.size()));
         cardMap[p.x][p.y].setNum(Math.random() > 0.1 ? 2 : 4);
     }
-
+    //上划
     private void swipeUp(){
         boolean add = false;
         for(int j = 0; j < 4; j++){
@@ -162,7 +159,7 @@ public class GameView extends GridLayout {
             checkGameOver();
         }
     }
-
+    //下划
     private void swipeDown(){
         boolean add = false;
         for(int j = 0; j < 4; j++){
@@ -193,7 +190,7 @@ public class GameView extends GridLayout {
             checkGameOver();
         }
     }
-
+    //左划
     private void swipeLeft(){
         boolean add = false;
         for(int i = 0; i < 4; i++){
@@ -224,7 +221,7 @@ public class GameView extends GridLayout {
             checkGameOver();
         }
     }
-
+    //右划
     private void swipeRight(){
         boolean add = false;
         for(int i = 0; i < 4; i++){
@@ -255,7 +252,7 @@ public class GameView extends GridLayout {
             checkGameOver();
         }
     }
-
+    //检查游戏是否结束
     private void checkGameOver(){
         boolean gameover = true;
         ALL:
@@ -273,13 +270,14 @@ public class GameView extends GridLayout {
         }
         if(gameover){
             AlertDialog.Builder  builder=  new AlertDialog.Builder(getContext());
+                    builder.setCancelable(false);
                     builder.setTitle("GameOver");
                     builder.setMessage("游戏结束");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             startGame();
-                            MainActivity.getMainActivity().clearScore();
+                            MainActivity.getMainActivity().clear();
                         }
                     });
                     builder.show();

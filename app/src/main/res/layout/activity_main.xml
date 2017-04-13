@@ -7,7 +7,8 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     >
-    <LinearLayout
+    <GridLayout
+        android:id="@+id/game_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -17,13 +18,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/score"
-            android:textSize="32dp" />
+            android:textSize="32sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32dp"
+            android:textSize="32sp"
             android:id="@+id/tvscore"/>
-    </LinearLayout>
+    </GridLayout>
     <example.com.game2048.GameView
         android:layout_width="match_parent"
         android:layout_height="0dp"

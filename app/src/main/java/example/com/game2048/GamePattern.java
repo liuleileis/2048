@@ -1,8 +1,6 @@
 package example.com.game2048;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,20 +24,27 @@ public class GamePattern extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_game_pattern);
-        //设置字体
-        gamepattern = (TextView)findViewById(R.id.GamePattern_name);
-        Typeface font = Typeface.createFromAsset(getAssets(),"Fonts/华康少女字体.ttf");
-        gamepattern.setTypeface(font);
         survival = (Button)findViewById(R.id.gamepattern_survival);
         time = (Button)findViewById(R.id.gamepattern_time);
         //事件监听
-        survival.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent next = new Intent(GamePattern.this,MainActivity.class);
-                GamePattern.this.startActivity(next);
-//                GamePattern.this.finish();
+        time.setOnClickListener(new ButtonListener());
+        survival.setOnClickListener(new ButtonListener());
+
+    }
+    //监视button,判断游戏模式
+    private class ButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            Intent next = new Intent(GamePattern.this,MainActivity.class);
+            switch (v.getId()){
+                case R.id.gamepattern_survival:
+                    next.putExtra("pattern","survival");
+                    break;
+                case R.id.gamepattern_time:
+                    next.putExtra("pattern","time");
             }
-        });
+            GamePattern.this.startActivity(next);
+//            GamePattern.this.finish();
+        }
     }
 }

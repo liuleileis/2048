@@ -1,7 +1,6 @@
 package example.com.game2048;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.widget.FrameLayout;
@@ -14,14 +13,12 @@ import android.widget.TextView;
 public class Card extends FrameLayout {
     //游戏中的每一个方框都是一个FrameLayout加一个Textview显示数字。label为显示数字的Textview
     private TextView label;
-    Typeface font = Typeface.createFromAsset(getResources().getAssets(),"Fonts/方正粗圆.ttf");
     //card的构造方法
     public Card(@NonNull Context context) {
         super(context);
         //创建textview
         label = new TextView(getContext());
         //设置textview文字大小
-
         label.setTextSize(32);
         //textview在frameLayou中居中
         label.setGravity(Gravity.CENTER);
